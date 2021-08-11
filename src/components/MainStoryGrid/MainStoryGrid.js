@@ -24,8 +24,8 @@ const MainStoryGrid = () => {
       <SecondaryStorySection>
         <StoryList>
           {SECONDARY_STORIES.map((story, index) => (
-            <Border>
-              <SecondaryStory key={story.id} {...story} />
+            <Border key={story.id}>
+              <SecondaryStory {...story} />
             </Border>
           ))}
         </StoryList>
@@ -35,8 +35,8 @@ const MainStoryGrid = () => {
         <SectionTitle>Opinion</SectionTitle>
         <OpinionList>
           {OPINION_STORIES.map((story, index) => (
-            <Border>
-              <OpinionStory key={story.id} {...story} />
+            <Border key={story.id}>
+              <OpinionStory {...story} />
             </Border>
           ))}
         </OpinionList>
@@ -126,6 +126,10 @@ const Border = styled.div`
 
 const OpinionSection = styled.section`
   grid-area: opinion-stories;
+
+  @media ${QUERIES.laptopAndUp} {
+    margin-top: -8px;
+  }
 `;
 
 const AdvertisementSection = styled.section`

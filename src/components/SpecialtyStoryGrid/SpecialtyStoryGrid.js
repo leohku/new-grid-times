@@ -37,8 +37,8 @@ const SpecialtyStoryGrid = () => {
         </SectionTitle>
         <SportsStories>
           {SPORTS_STORIES.map((data) => (
-            <MiniStoryWrapper>
-              <MiniStory key={data.id} {...data} />
+            <MiniStoryWrapper key={data.id}>
+              <MiniStory {...data} />
             </MiniStoryWrapper>
           ))}
         </SportsStories>

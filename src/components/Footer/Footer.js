@@ -141,7 +141,7 @@ const TopRow = styled.div`
   display: flex;
   flex-direction: column;
   align-items: center;
-  gap: 16px;
+  gap: 46px;
   color: var(--color-gray-300);
   font-size: 0.875rem;
   border-bottom: 1px solid var(--color-gray-700);
@@ -183,7 +183,7 @@ const MainNavArea = styled.div`
 
   @media ${QUERIES.tabletAndUp} {
     text-align: start;
-    grid-template-columns: repeat(auto-fill, minmax(230px, 1fr));
+    grid-template-columns: repeat(auto-fit, minmax(230px, 1fr));
   }
 `;
 

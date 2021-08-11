@@ -35,18 +35,16 @@ const Header = () => {
         </Row>
       </SuperHeader>
       <MainHeader>
-        <LaptopAndUpOnly>
+        <LeftActionGroupWrapper>
           <LeftActionGroup />
-        </LaptopAndUpOnly>
-        <Wiggle>
-          <Logo />
-        </Wiggle>
-        <LaptopAndUpOnly>
+        </LeftActionGroupWrapper>
+        <Logo />
+        <SubscribeGroupWrapper>
           <SubscribeGroup>
             <Button>Subscribe</Button>
             <Link href="">Already a subscriber?</Link>
           </SubscribeGroup>
-        </LaptopAndUpOnly>
+        </SubscribeGroupWrapper>
       </MainHeader>
     </header>
   );
@@ -80,11 +78,20 @@ const ActionGroup = styled.div`
   }
 `;
 
-const LaptopAndUpOnly = styled.div`
+const LeftActionGroupWrapper = styled.div`
   display: none;
 
   @media ${QUERIES.laptopAndUp} {
-    display: block;
+    display: flex;
+  }
+`;
+
+const SubscribeGroupWrapper = styled.div`
+  display: none;
+
+  @media ${QUERIES.laptopAndUp} {
+    display: flex;
+    flex-direction: row-reverse;
   }
 `;
 
@@ -95,14 +102,6 @@ const SubscribeGroup = styled.div`
   gap: 8px;
   position: relative;
   top: 14px;
-`;
-
-const Wiggle = styled.div`
-  @media ${QUERIES.laptopAndUp} {
-    position: relative;
-    left: 36px;
-    bottom: 4px;
-  }
 `;
 
 const Link = styled.a`
@@ -116,9 +115,7 @@ const Link = styled.a`
 `;
 
 const MainHeader = styled(MaxWidthWrapper)`
-  display: flex;
-  align-items: center;
-  justify-content: center;
+  display: grid;
   margin-top: 2rem;
   margin-bottom: 3rem;
 
@@ -128,6 +125,8 @@ const MainHeader = styled(MaxWidthWrapper)`
   }
 
   @media ${QUERIES.laptopAndUp} {
+    grid-template-columns: 1fr auto 1fr;
+    align-items: center;
     justify-content: space-between;
     margin-top: 1rem;
     margin-bottom: 5.1875rem;
