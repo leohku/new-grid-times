@@ -1,5 +1,8 @@
 import React from 'react';
 import styled from 'styled-components/macro';
+import ImageWithFallback from '../ImageWithFallback';
+
+import { QUERIES, FAMILIES } from '../../constants';
 
 const MainStory = ({
   id,
@@ -9,6 +12,7 @@ const MainStory = ({
   abstract,
   ...delegated
 }) => {
+
   return (
     <Wrapper {...delegated}>
       <a href={`/story/${id}`}>
@@ -27,10 +31,13 @@ const Wrapper = styled.article`
   color: var(--color-gray-900);
 `;
 
-const Image = styled.img`
+const Image = styled(ImageWithFallback)`
   display: block;
   width: 100%;
   margin-bottom: 12px;
+  aspect-ratio: 1.49;
+  object-fit: cover;
+  border-radius: 4px;
 `;
 
 const Heading = styled.h2`
@@ -42,8 +49,21 @@ const Heading = styled.h2`
 
 const Abstract = styled.p`
   font-size: 1rem;
+  font-family: ${FAMILIES.text};
   margin-bottom: 1em;
   white-space: pre-wrap;
+  display: -webkit-box;
+  -webkit-box-orient: vertical;
+  -webkit-line-clamp: 8;
+  overflow: hidden;
+
+  @media ${QUERIES.tabletAndUp} {
+    -webkit-line-clamp: 16;
+  }
+
+  @media ${QUERIES.laptopAndUp} {
+    -webkit-line-clamp: 8;
+  }
 `;
 
 const Location = styled.span`

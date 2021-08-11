@@ -1,5 +1,6 @@
 import React from 'react';
 import styled from 'styled-components/macro';
+import ImageWithFallback from '../ImageWithFallback';
 
 const MiniStory = ({ id, image, title }) => {
   return (
@@ -18,7 +19,7 @@ const Wrapper = styled.article`
   gap: 8px;
 `;
 
-const Image = styled.img`
+const Image = styled(ImageWithFallback)`
   width: 100%;
   aspect-ratio: 220 / 132;
   object-fit: cover;

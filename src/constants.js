@@ -36,6 +36,7 @@ export const QUERIES = {
 
 export const FAMILIES = {
   serif: '"Crimson Pro", Georgia, serif',
+  text: '"Crimson Text", Georgia, serif',
   sansSerif:
     '"Helvetica Neue", Helvetica, "Franklin Gothic Medium", "Franklin Gothic", "ITC Franklin Gothic", sans-serif',
   logo: 'Chomsky',
