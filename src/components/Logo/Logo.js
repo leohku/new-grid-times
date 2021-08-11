@@ -35,8 +35,12 @@ const TodaysDate = styled.p`
   font-size: 1.125rem;
   color: var(--color-gray-900);
   font-weight: var(--font-weight-medium);
-  margin-top: -1rem;
-  line-height: 1.125rem;
+  margin-top: -0.7rem;
+
+  @media ${QUERIES.laptopAndUp} {
+    margin-top: -1rem;
+    line-height: 1.125rem;
+  }
 `;
 
 export default Logo;
