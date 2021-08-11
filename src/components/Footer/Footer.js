@@ -141,7 +141,7 @@ const TopRow = styled.div`
   display: flex;
   flex-direction: column;
   align-items: center;
-  gap: 46px;
+  gap: 18px 46px;
   color: var(--color-gray-300);
   font-size: 0.875rem;
   border-bottom: 1px solid var(--color-gray-700);
